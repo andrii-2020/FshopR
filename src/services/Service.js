@@ -5,6 +5,7 @@ export class Services {
         return  fetch(`${this._url}api/categories/`).then(value => value.json());
     }
 
+    
     getAllProducts() {
         return fetch(`${this._url}api/products/`).then(value => value.json())
     }
