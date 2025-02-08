@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, CardTitle } from './ui/CardP'
+import {CardTitle } from './ui/CardP'
 import {useNavigate } from 'react-router-dom';
 
 
