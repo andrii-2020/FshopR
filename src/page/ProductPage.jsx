@@ -11,7 +11,6 @@ const ProductPage = () => {
   const [product, setProduct] = useState({});
   const [seletSize, setSeletSize] = useState('');
   const [seletColor, setSeletColor] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
   
 
 
