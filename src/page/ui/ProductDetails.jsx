@@ -2,7 +2,7 @@ import React from 'react';
 
 import { SizeSelector } from './SizeSelector';
 import { ColorSelector } from './ColorSelector';
-import { Button } from './CardP';
+
 
 
 export const ProductDetails = ({
@@ -14,12 +14,25 @@ export const ProductDetails = ({
   selectedSize,
   selectedColor,
   onSizeChange,
-  onColorChange
+  onColorChange,
+  newPrice,
+  newPrice_Yes_No,
 }) => (
-  <div className="space-y-6 p-20">
+  <div className="space-y-6 p-6">
     <div>
       <h1 className="text-3xl font-bold">{name}</h1>
-      <p className="text-2xl font-semibold text-gray-700">{price} ₴</p>
+      <div>
+              <p
+                className="text-2xl font-semibold text-gray-700"
+                style={{ textDecoration: Number(newPrice) > 0 ? 'line-through' : undefined }}>
+                {price} грн</p>
+                {newPrice_Yes_No !== true ?
+                  undefined :
+                  <div >
+                    {Number(newPrice) > 0 ? <h1 className='text-red-500 font-bold'>{newPrice} грн 🔥🔥🔥</h1> : undefined}
+                  </div>}
+            </div>
+      
     </div>
 
     <div>
@@ -38,8 +51,5 @@ export const ProductDetails = ({
       onColorChange={onColorChange}
     />
 
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <Button variant='outline' style={{ display: 'flex' }}/>
-    </div>
   </div>
 );

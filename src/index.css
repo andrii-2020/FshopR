@@ -9,3 +9,28 @@
     /* width: 70rem; */
 }
 
+.shtyki {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30;
+    color: red;
+}
+
+.promo{
+    background: linear-gradient(90deg, #ff0000 0%, #f85e17 50%, #ff0000 100%);
+    transform: rotate(-45deg);
+    position: absolute;
+    z-index: 1;
+    padding: 0px 26px;
+    top: 30px;
+    left: -7px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    
+}
+
+.slideshow-container{
+    
+    position: relative;
+    margin: auto;
+
+}

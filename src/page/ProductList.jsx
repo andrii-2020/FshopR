@@ -4,7 +4,7 @@ import {
   HomeIcon,
 } from 'lucide-react';
 import _Services from '../services';
-import { CardP, CardContent, CardTitle } from './ui/CardP';
+import { CardP, CardContent, CardTitle, Cardshtuki } from './ui/CardP';
 
 
 
@@ -52,15 +52,15 @@ export default function ProductList() {
               }}
             />
           </div>
-          <div className="grid grid-cols-4 gap-5 p-20"
-            
+          <div className="grid grid-cols-2 gap-4 p-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+
           >
 
             {productsL.map(product => (
               <div
                 key={product.id}
                 className="p-1 text-center hover:shadow-xl transition "
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/products/${product.id}`);
                 }}
               >
@@ -76,8 +76,20 @@ export default function ProductList() {
                     ))}
 
                     <CardTitle>{product.name}</CardTitle>
-                    <p className="text-blue-600 font-bold mt-2">{product.price} грн</p>
-                  </CardContent>     
+                    <Cardshtuki text={product.stock} />
+                    <div>
+                      <p
+                        className="text-black-600 font-bold mt-2"
+                        style={{ textDecoration: Number(product.newPrice) > 0 ? 'line-through' : undefined }}>
+                        {product.price} грн</p>
+                      {product.newPrice_Yes_No !==true?
+                        undefined :
+                        <div >
+                          {Number(product.newPrice) > 0 ? <h1 className='text-red-500 font-bold'>{product.newPrice} грн 🔥🔥🔥</h1> : undefined}
+                        </div>}
+                    </div>
+                   
+                  </CardContent>
                 </CardP>
               </div>
             ))}

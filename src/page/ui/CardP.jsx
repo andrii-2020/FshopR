@@ -14,6 +14,15 @@ export const CardP = ({ children, className, ...props }) => (
   </div>
 );
 
+
+
+
+export const Cardshtuki = ({ children, text }) => (
+  <h4 style={{ marginTop: 5, fontSize: 14 }}>
+    styk v nalichii - <span className='shtyki'>{text}</span>
+  </h4>
+);
+
 export const CardTitle = ({ children, className, ...props }) => (
   <h3
     className="text-2xl font-semibold leading-none tracking-tight  "
@@ -37,6 +46,7 @@ export const CardContent = ({ children, className, ...props }) => (
 
 
 export const Button = ({
+  btnD,
   children,
   variant = 'default',
   size = 'default',
@@ -45,18 +55,19 @@ export const Button = ({
 }) => {
   const variantStyles = {
     default: "bg-blue-500 text-white hover:bg-blue-600",
-    outline: "border border-gray-300 bg-white hover:bg-gray-100 m-5",
+    outline: "border border-gray-300 bg-white hover:bg-gray-100 m-1",
     ghost: "hover:bg-gray-100"
   };
 
   const sizeStyles = {
     default: "px-4 py-2 text-base",
-    sm: "px-3 py-1 text-sm",
+    sm: "px-0 py-0 text-sm",
     lg: "px-6 py-3 text-lg"
   };
 
   return (
     <button
+      disabled={btnD}
       className={cn(
         "rounded-md transition-colors focus:outline-none focus:ring-2",
         variantStyles[variant],
@@ -66,8 +77,8 @@ export const Button = ({
       {...props}
     >
       {children}
-      <div style={{ display: 'flex', justifyContent: 'space-around', width: '150px' }}>
-        <code>Add to Card</code>
+      <div style={{ display: 'flex', justifyContent: 'space-around', width: '150px', padding: 5 }}>
+        <code>Замовити</code>
         <CirclePlus />
       </div>
     </button>

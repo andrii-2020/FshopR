@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const ColorSelector = ({ colors, selectedColor, onColorChange }) => {
-
+const [activeColor, setActiveColor] = useState(null);
 
 
  
@@ -18,15 +18,19 @@ export const ColorSelector = ({ colors, selectedColor, onColorChange }) => {
         {
           colors &&
           <div className="flex gap-3 p-5">
-          {colors.map(color => (
-            <div>
+          {colors.map((color, ind) => (
+            
               <button
-              key={color.id}
+              key={ind}
+              
               className={` w-10 h-10 rounded-full border`}
-              style={{ backgroundColor: color.hex_code }}
-              onClick={() => onColorChange(color.hex_code)}
+              style={{ backgroundColor: color.hex_code, borderColor:activeColor === ind  ? 'blue': 'red' }}
+              onClick={() =>{
+                onColorChange(color.name)
+                setActiveColor(ind)
+              }}
             />
-            </div>
+            
           ))}
         </div>
         }
