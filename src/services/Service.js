@@ -1,5 +1,5 @@
 export class Services {
-    _url='http://127.0.0.1:8000/';
+    _url='https://shpapi-production.up.railway.app/';
 
     getAllCategories() {
         return  fetch(`${this._url}api/categories/`).then(value => value.json());
