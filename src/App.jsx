@@ -23,6 +23,7 @@ function App() {
     fetchCategories();
   }, []);
 
+
   return (
     <div className="md:flex h-screen">
       
