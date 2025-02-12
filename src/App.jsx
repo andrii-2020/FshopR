@@ -5,12 +5,6 @@ import _Services from './services';
 import AllProducts from './page/AllProducts';
 import './App.css'
 
-
-
-
-
-
-
 function App() {
   const [productsall, setProductsall] = useState([]);
   const [showAllP, setShowAllP] = useState(true);
