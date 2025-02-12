@@ -26,6 +26,7 @@ export const ProductDetails = ({
                 className="text-2xl font-semibold text-gray-700"
                 style={{ textDecoration: Number(newPrice) > 0 ? 'line-through' : undefined }}>
                 {price} грн</p>
+                
                 {newPrice_Yes_No !== true ?
                   undefined :
                   <div >

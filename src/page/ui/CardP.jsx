@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  CirclePlus
-} from 'lucide-react';
+
 const cn = (...classes) => classes.filter(Boolean).join(' ');
 
 
@@ -77,9 +75,14 @@ export const Button = ({
       {...props}
     >
       {children}
-      <div style={{ display: 'flex', justifyContent: 'space-around', width: '150px', padding: 5 }}>
-        <code>Замовити</code>
-        <CirclePlus />
+      <div style={{ display: 'flex', justifyContent: 'space-around', padding: 5 }}>
+        <span className="relative flex size-3">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+          {btnD ? 
+          <span className="relative inline-flex size-3 rounded-full bg-red-500"></span> : 
+          <span className="relative inline-flex size-3 rounded-full bg-sky-500"></span>}
+        </span>
+        <code className='p-2'>Зложити замовлення</code>
       </div>
     </button>
   );

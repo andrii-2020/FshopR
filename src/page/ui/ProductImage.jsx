@@ -11,7 +11,7 @@ export const ProductImage = ({ imageUrl}) => {
         setCurrentIndex((prevIndex) => 
           prevIndex === imageUrl.length - 1 ? 0 : prevIndex + 1
         );
-      }, 10000); // Змінює зображення кожні 3 секунди
+      }, 7000); // Змінює зображення кожні 3 секунди
       return () => clearInterval(timer);
     }
 
