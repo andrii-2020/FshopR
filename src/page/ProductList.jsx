@@ -6,13 +6,6 @@ import {
 import _Services from '../services';
 import { CardP, CardContent, CardTitle, Cardshtuki } from './ui/CardP';
 
-
-
-
-
-
-
-
 export default function ProductList() {
   const [productsL, setProductsL] = useState([]);
   const [mouseEntry, setMouseEntry] = useState(false);

@@ -81,7 +81,7 @@ const ProductPage = () => {
           <Button
             btnD={seletColor.length > 0 && seletSize.length > 0 ? false : true}
             variant='outline'
-            style={{ display: 'flex' }}
+            style={{ display: 'flex', background: 'red', color: 'white' }}
             size='sm'
             onClick={() => { _goForm('/form', {
               state: {
