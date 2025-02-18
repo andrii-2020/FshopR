@@ -17,7 +17,7 @@ export const CardP = ({ children, className, ...props }) => (
 
 export const Cardshtuki = ({ children, text }) => (
   <h4 style={{ marginTop: 5, fontSize: 14 }}>
-    styk v nalichii - <span className='shtyki'>{text}</span>
+    Штук:  <span className='shtyki'>{text}</span>
   </h4>
 );
 
