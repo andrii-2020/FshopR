@@ -82,7 +82,7 @@ export const Button = ({
           <span className="relative inline-flex size-3 rounded-full bg-red-500"></span> : 
           <span className="relative inline-flex size-3 rounded-full bg-sky-500"></span>}
         </span>
-        <code className='p-2'>Зложити замовлення</code>
+        <code className='p-2'>Замовити</code>
       </div>
     </button>
   );
