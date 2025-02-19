@@ -25,7 +25,7 @@ export default function AllProducts({ products }) {
                 key={product.id}
                 src={img.image}
                 alt='img'
-                style={{ width: '28rem', height: '20rem' }}
+                style={{ width: '28rem'}}
                 className="mx-auto mb-4"
               />
             ))}

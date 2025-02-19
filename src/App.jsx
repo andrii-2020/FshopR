@@ -1,27 +1,34 @@
 
 import React, { useState, useEffect } from 'react';
 import Categories from './page/Categories';
-import _Services from './services';
+
 import AllProducts from './page/AllProducts';
 import './App.css'
+import _Services from "./services";
+
+
+
+
 
 function App() {
   const [productsall, setProductsall] = useState([]);
   const [showAllP, setShowAllP] = useState(true);
+
   
-  useEffect(() => {
-    const fetchCategories = async () => {
+  useEffect(  () => {
+
+    const fetchAllProducts = async () => {
       try {
        _Services.getAllProducts().then(value =>{
         setProductsall(value)
        })
       } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error('Error fetching categories:');
       }
     };
 
 
-    fetchCategories();
+    fetchAllProducts();
   }, []);
 
 

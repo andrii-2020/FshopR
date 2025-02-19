@@ -11,26 +11,22 @@ import FormsAdd from './page/ui/FormsAdd';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === 'object') {
-  for (let [key, value] of Object.entries(window.__REACT_DEVTOOLS_GLOBAL_HOOK__)) {
-    window.__REACT_DEVTOOLS_GLOBAL_HOOK__[key] = typeof value === 'function' ? () => {} : null;
-  }
+    for (let [key, value] of Object.entries(window.__REACT_DEVTOOLS_GLOBAL_HOOK__)) {
+        window.__REACT_DEVTOOLS_GLOBAL_HOOK__[key] = typeof value === 'function' ? () => {} : null;
+    }
 }
 root.render(
-  <React.StrictMode>
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" index  element={<App />} />
-      <Route path="/products/category/:id"  element={<ProductList/>}/>
-      <Route path="/products/:id"  element={<ProductPage/>}/>
-      <Route path="/form"  element={<FormsAdd/>}/>
-      
-      <Route path="*" element={<NoMatch/>}/>
-    </Routes>
-  </BrowserRouter>
-  </React.StrictMode>
+    <React.StrictMode>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" index  element={<App />} />
+                <Route path="/products/category/:id"  element={<ProductList/>}/>
+                <Route path="/products/:id"  element={<ProductPage/>}/>
+                <Route path="/form"  element={<FormsAdd/>}/>
+
+                <Route path="*" element={<NoMatch/>}/>
+            </Routes>
+        </BrowserRouter>
+    </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

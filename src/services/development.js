@@ -1,6 +1,6 @@
 
 const development = {
-    apiUrl: 'https://shpapi-production.up.railway.app/api',
+    apiUrl: 'http://localhost:8000/api',
     enableLogs: true,
     features: {
         analytics: false,

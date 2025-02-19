@@ -3,8 +3,9 @@ import { Button, CardP } from './ui/CardP';
 import { ProductImage } from './ui/ProductImage';
 import { ProductDetails } from './ui/ProductDetails';
 import { useParams, useNavigate } from 'react-router-dom';
-import _Services from '../services';
+
 import { HomeIcon } from 'lucide-react';
+import _Services from "../services";
 
 
 

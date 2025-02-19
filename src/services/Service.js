@@ -1,9 +1,9 @@
 import config from "./config";
 
+
 export class Services {
 
     getAllCategories() {
-        console.log(config)
         return  fetch(`${config.apiUrl}/categories/`).then(value => value.json());
     }
 

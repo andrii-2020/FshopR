@@ -2,7 +2,10 @@
 import React, { useState, useMemo } from 'react';
 import '../App.css'
 import { useNavigate } from 'react-router-dom';
-import _Services from '../services';
+import _Services from "../services";
+
+
+
 
 
 
@@ -26,7 +29,6 @@ export default function Categories({showAllP}) {
     const handleCategoryClick = (categoryId) => {
         _navigate(`/products/category/${categoryId}`);
         showAllP(false)
-        // console.log(categoryId)
       };
 
   return (

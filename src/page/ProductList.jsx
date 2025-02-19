@@ -3,8 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import {
   HomeIcon,
 } from 'lucide-react';
-import _Services from '../services';
+
 import { CardP, CardContent, CardTitle, Cardshtuki } from './ui/CardP';
+import _Services from "../services";
 
 export default function ProductList() {
   const [productsL, setProductsL] = useState([]);
