@@ -6,11 +6,6 @@ import _Services from "../services";
 
 
 
-
-
-
-
-
 export default function Categories({showAllP}) {
 
   const [selectedCategory, setSelectedCategory] = useState([]);
@@ -34,6 +29,7 @@ export default function Categories({showAllP}) {
   return (
       <div className=" bg-gray-100 p-4" >
         <h2 className="text-xl font-bold mb-4">Категорії</h2>
+
           {selectedCategory.length > 0?
             <>
                 {selectedCategory.map((category,index) => (

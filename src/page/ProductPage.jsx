@@ -24,8 +24,7 @@ const ProductPage = () => {
   useEffect(() => {
     if (id) {
       _Services.getProductID(Number(id)).then(res => {
-        const r = res
-        setProduct(r)
+        setProduct(res)
       }).catch(error => {
         console.warn(error)
       })

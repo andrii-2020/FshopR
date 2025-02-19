@@ -40,3 +40,18 @@
 .mySlides{
     padding: 18px;
 }
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        clip-path: inset(100% 100% 0 0);
+    }
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.scrool{
+   animation: appear 1s linear;
+}

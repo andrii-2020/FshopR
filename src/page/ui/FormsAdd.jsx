@@ -15,15 +15,22 @@ export default function FormsAdd() {
 
     });
     const [showAlert, setShowAlert] = useState(false);
+    const [validPhone, setvalidPhone] = useState(false);
    
     
 
     const handleBookingChange = (e) => {
+        e.preventDefault()
         const { name, value } = e.target;
         setBookingData(prev => ({
             ...prev,
             [name]: value
         }));
+        if (bookingData.phone.match(/^[0-9\b]+$/)) {
+            setvalidPhone(true)
+        } else {
+            setvalidPhone(false)
+        }
         
     };
 
@@ -57,19 +64,19 @@ export default function FormsAdd() {
                 <div className="w-full md:p-6 p-4 md:mt-0 sm:p-8 dark:bg-gray-900">
 
                     {showAlert && 
-                        <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 p-5 text-center animate-bounce"  role="alert">
-                        <p class="font-bold">Дякуємо за замовлення.</p>
-                        <p class="text-sm">На протязі 1-год. з вами зв'яжиться продавець</p>
+                        <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 p-5 text-center animate-bounce"  role="alert">
+                        <p className="font-bold">Дякуємо за замовлення.</p>
+                        <p className="text-sm">На протязі 1-год. з вами зв'яжиться продавець</p>
                     </div>
                     }
                     <div className="w-4/5 mx-auto shadow-2xl rounded-sm p-10">
 
                         <h1
                             className="text-2xl font-semibold p-4 bg-gray-200 shadow-lg dark:bg-gray-800 dark:text-white rounded-sm">
-                            Ви вибрали  <span style={{ color: 'rgba(124, 115, 120, 0.8)' }}>{state.name}</span> розмір
-                            <span style={{ color: 'rgba(124, 115, 120, 0.8)' }}> {state.size} </span>
-                            Колір <span style={{ color: 'rgba(124, 115, 120, 0.8)' }}>{state.color} </span>
-                            Ціна <span style={{ color: 'rgba(124, 115, 120, 0.8)' }}> {state.price} </span>Грн.
+                            Ви вибрали <span style={{color: 'rgba(124, 115, 120, 0.8)'}}>{state.name}</span> розмір
+                            <span style={{color: 'rgba(124, 115, 120, 0.8)'}}> {state.size} </span>
+                            Колір <span style={{color: 'rgba(124, 115, 120, 0.8)'}}>{state.color} </span>
+                            Ціна <span style={{color: 'rgba(124, 115, 120, 0.8)'}}> {state.price} </span>Грн.
                         </h1>
 
 
@@ -88,7 +95,7 @@ export default function FormsAdd() {
                                         className="bg-gray-50 border border-gray-300 text-center text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         value={bookingData.f_name}
                                         onChange={handleBookingChange}
-                                        style={{ borderColor: bookingData.f_name.length === 0 ? 'red' : '' }}
+                                        style={{borderColor: bookingData.f_name.length === 0 ? 'red' : ''}}
 
                                     />
                                 </div>
@@ -98,29 +105,35 @@ export default function FormsAdd() {
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Фамілія
                                     </label>
                                     <input type="text"
-                                        name="l_name"
-                                        id="first_name"
-                                        className="bg-gray-50 border border-gray-300 text-center text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        value={bookingData.l_name}
-                                        onChange={handleBookingChange}
-                                        style={{ borderColor: bookingData.l_name.length === 0 ? 'red' : '' }}
+                                           name="l_name"
+                                           id="first_name"
+                                           className="bg-gray-50 border border-gray-300 text-center text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                           value={bookingData.l_name}
+                                           onChange={handleBookingChange}
+                                           style={{borderColor: bookingData.l_name.length === 0 ? 'red' : ''}}
                                     />
                                 </div>
 
                                 <div className="w-full">
                                     <label
-                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Номер телефону
+                                        style={{color: validPhone ===false? 'red' : 'white'}}
+                                        className="block mb-2 text-sm font-medium text-gray-900" >
+                                        {validPhone === false? 'Номер телефону: 0682223344' : 'Номер телефону'}
                                     </label>
                                     <input
+                                        placeholder='0682223344'
                                         type="tel"
                                         name="phone"
-                                        maxLength={9}
+                                        maxLength={10}
                                         id="phone"
-                                        pattern="[0-9]{9}"
-                                        className="bg-gray-50 border border-gray-300 text-center text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        className="bg-gray-50 border border-gray-300 text-center text-gray-900
+                                        sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block
+                                        w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+                                        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+                                        dark:focus:border-blue-500"
                                         value={bookingData.phone}
                                         onChange={handleBookingChange}
-                                        style={{ borderColor: bookingData.l_name.length === 0 ? 'red' : '' }}
+                                        style={{borderColor: bookingData.l_name.length === 0 ? 'red' : ''}}
                                     />
                                 </div>
 
@@ -130,10 +143,14 @@ export default function FormsAdd() {
                         </div>
 
                         <div className="w-full flex justify-center p-2 bg-gray-200 dark:bg-gray-800">
+
                             <button
                                 className="sm:px-8 px-4 py-2 bg-transparent text-white rounded-lg border-2 animate-pulse"
-                                onClick={() => { SendMessage() }}
-                                disabled={bookingData.l_name === '' || bookingData.f_name === '' || bookingData.phone === '' ? true : false}
+                                onClick={() => {
+                                    SendMessage()
+                                }} disabled={bookingData.l_name === ''
+                                || bookingData.f_name === ''
+                                || validPhone === false}
                             >
                                 Нідіслати продавцю
                             </button>
