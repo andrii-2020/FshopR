@@ -2,3 +2,4 @@
 from = "/api/*"
 to = "https://shpapi-production.up.railway.app/api/:splat"
 status = 200
+headers = {X-Content-Type = 'application/json', Accept= 'application/json'}
