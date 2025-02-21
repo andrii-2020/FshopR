@@ -4,7 +4,7 @@ import config from "./config";
 export class Services {
 
     getAllCategories() {
-        return  fetch(`${config.apiUrl}/api/categories/`).then(value => value.json());
+        return  fetch(`${config.apiUrl}/categories/`).then(value => value.json());
     }
 
     
