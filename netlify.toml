@@ -1,4 +1,4 @@
 [[redirects]]
 from = "/api/*"
-to = "https://shpapi-production.up.railway.app/api/categories/"
+to = "https://shpapi-production.up.railway.app/api/categories/:splat"
 status = 200
