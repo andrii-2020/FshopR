@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useLocation, useNavigate } from "react-router-dom"
+import config from "../../services/config";
 
 
 export default function FormsAdd() {
@@ -37,7 +38,7 @@ export default function FormsAdd() {
     const _goHome = useNavigate()
     const SendMessage = () => {
         console.log(bookingData)
-        fetch('/api/sms/', {
+        fetch(`${config.apiUrl}/sms/`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -57,11 +58,11 @@ export default function FormsAdd() {
 
     return (
 
-        <div className="w-full h-screen mx-auto flex dark:bg-gray-900">
+        <div className="w-full h-screen mx-auto flex bg-gray-900 ">
 
             <div className="lg:w-[80%] md:w-[90%] sm:w-[92%] w-[96%] mx-auto flex items-center justify-center">
 
-                <div className="w-full md:p-6 p-4 md:mt-0 sm:p-8 dark:bg-gray-900">
+                <div className="w-full md:p-6 p-4 md:mt-0 sm:p-8 bg-gray-900">
 
                     {showAlert && 
                         <div className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 p-5 text-center animate-bounce"  role="alert">
@@ -72,7 +73,7 @@ export default function FormsAdd() {
                     <div className="w-4/5 mx-auto shadow-2xl rounded-sm p-10">
 
                         <h1
-                            className="text-2xl font-semibold p-4 bg-gray-200 shadow-lg dark:bg-gray-800 dark:text-white rounded-sm">
+                            className="text-2xl font-semibold p-4 bg-gray-200 shadow-lg bg-gray-800 dark:text-white rounded-sm">
                             Ви вибрали <span style={{color: 'rgba(124, 115, 120, 0.8)'}}>{state.name}</span> розмір
                             <span style={{color: 'rgba(124, 115, 120, 0.8)'}}> {state.size} </span>
                             Колір <span style={{color: 'rgba(124, 115, 120, 0.8)'}}>{state.color} </span>
@@ -81,7 +82,7 @@ export default function FormsAdd() {
 
 
                         <div className="w-full md:flex sm:gap-2 gap-0 text-center">
-                            <div className="bg-gray-100 dark:bg-gray-800 w-full px-4 py-6">
+                            <div className="bg-gray-100 bg-gray-800 w-full px-4 py-6">
 
 
                                 <div className="w-full">
@@ -92,7 +93,11 @@ export default function FormsAdd() {
                                         type="text"
                                         name="f_name"
                                         id="first_name"
-                                        className="bg-gray-50 border border-gray-300 text-center text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        className="bg-gray-50 border border-gray-300 text-center
+                                        text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600
+                                        focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700
+                                        dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                        dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         value={bookingData.f_name}
                                         onChange={handleBookingChange}
                                         style={{borderColor: bookingData.f_name.length === 0 ? 'red' : ''}}
@@ -102,7 +107,7 @@ export default function FormsAdd() {
 
                                 <div className="w-full">
                                     <label
-                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Фамілія
+                                        className="block mb-2 text-sm font-medium dark:text-white">Призвіще
                                     </label>
                                     <input type="text"
                                            name="l_name"
@@ -142,7 +147,7 @@ export default function FormsAdd() {
 
                         </div>
 
-                        <div className="w-full flex justify-center p-2 bg-gray-200 dark:bg-gray-800">
+                        <div className="w-full flex justify-center p-2 bg-gray-200 bg-gray-800">
 
                             <button
                                 className="sm:px-8 px-4 py-2 bg-transparent text-white rounded-lg border-2 animate-pulse"
