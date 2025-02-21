@@ -1,5 +1,5 @@
 const production = {
-    apiUrl: "/api",
+    apiUrl: "https://shpapi-production.up.railway.app/api",
     enableLogs: false,
     features: {
         analytics: true,
