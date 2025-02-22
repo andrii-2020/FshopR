@@ -25,7 +25,7 @@ const ProductPage = () => {
     if (id) {
       _Services.getProductID(id).then(res => {
 
-        setProduct(res[0])
+        setProduct(res)
       }).catch(error => {
         console.warn(error)
       })
