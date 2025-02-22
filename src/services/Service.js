@@ -3,7 +3,14 @@ import config from "./config";
 export class Services {
 
     getAllCategories() {
-        return  fetch(`${config.apiUrl}/categories/`).then(value => value.json());
+        return  fetch(`${config.apiUrl}/categories/`,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            credentials: 'include'
+        }).then(value => value.json());
     }
 
     getAllProducts() {
@@ -18,3 +25,4 @@ export class Services {
 
      
 }
+
