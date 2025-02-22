@@ -13,7 +13,7 @@ export class Services {
         return fetch(`${config.apiUrl}/products/?category=${categoryId}`).then(value => value.json())
     }
     getProductID(id) {
-        return fetch(`${config.apiUrl}/products/${id}/`).then(value => value.json())
+        return fetch(`${config.apiUrl}/products/?products=${id}/`).then(value => value.json())
     }
 
      
