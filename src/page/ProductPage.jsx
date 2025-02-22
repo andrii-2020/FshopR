@@ -48,8 +48,7 @@ const ProductPage = () => {
         {product &&
             <div className="max-w-6xl mx-auto">
 
-                {product.map(res => (
-                    <>
+
                         <div style={{
                             textAlign: 'center',
                             width: '180px',
@@ -69,15 +68,15 @@ const ProductPage = () => {
                         <CardP className="grid md:grid-cols-2 gap-8 p-6">
                             <div className="mySlides fade">
                                 <ProductImage
-                                    imageUrl={res.images}
+                                    imageUrl={product.images}
                                 />
                             </div>
 
 
                             <ProductDetails
-                                {...res}
-                                selectedSize={res.sizes}
-                                selectedColor={res.colors}
+                                {...product}
+                                selectedSize={product.sizes}
+                                selectedColor={product.colors}
                                 onSizeChange={onSizeChanges}
                                 onColorChange={onColorChanges}
                             />
@@ -101,15 +100,14 @@ const ProductPage = () => {
                                                 size: seletSize,
                                                 name: product.name,
                                                 oldPrice: product.price,
-                                                price: Number(res.newPrice) > 0 ? res.newPrice : res.price,
+                                                price: Number(product.newPrice) > 0 ? product.newPrice : product.price,
                                             }
                                         })
                                     }}
                                 />
                             </div>
                         </CardP>
-                    </>
-                ))}
+
 
             </div>
         }
