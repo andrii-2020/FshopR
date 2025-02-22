@@ -1,5 +1,5 @@
 const production = {
-    apiUrl: `${process.env.REACT_APP_API_URL}`,
+    apiUrl: `/api`,
     enableLogs: false,
     features: {
         analytics: true,
