@@ -1,5 +1,5 @@
 const production = {
-    apiUrl: "https://shpapi-production.up.railway.app/api",
+    apiUrl: `${process.env.REACT_APP_API_URL}`,
     enableLogs: false,
     features: {
         analytics: true,
