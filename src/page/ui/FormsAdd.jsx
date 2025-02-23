@@ -73,7 +73,7 @@ export default function FormsAdd() {
                     <div className="w-4/5 mx-auto shadow-2xl rounded-sm p-10">
 
                         <h1
-                            className="text-2xl font-semibold p-4  shadow-lg bg-gray-800 dark:text-white rounded-sm">
+                            className="text-2xl font-semibold p-4  shadow-lg bg-gray-800 text-white rounded-sm">
                             Ви вибрали <span style={{color: 'rgba(124, 115, 120, 0.8)'}}>{state.name}</span> розмір
                             <span style={{color: 'rgba(124, 115, 120, 0.8)'}}> {state.size} </span>
                             Колір <span style={{color: 'rgba(124, 115, 120, 0.8)'}}>{state.color} </span>
@@ -87,7 +87,7 @@ export default function FormsAdd() {
 
                                 <div className="w-full">
                                     <label
-                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Імя
+                                        className="block mb-2 text-sm font-medium text-white">Імя
                                     </label>
                                     <input
                                         type="text"
@@ -107,7 +107,7 @@ export default function FormsAdd() {
 
                                 <div className="w-full">
                                     <label
-                                        className="block mb-2 text-sm font-medium dark:text-white">Призвіще
+                                        className="block mb-2 text-sm font-medium text-white">Призвіще
                                     </label>
                                     <input type="text"
                                            name="l_name"
