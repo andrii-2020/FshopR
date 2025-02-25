@@ -12,7 +12,6 @@ import _Services from "../services";
 const ProductPage = () => {
   const [product, setProduct] = useState([]);
   const [seletSize, setSeletSize] = useState('');
-  const [seletColor, setSeletColor] = useState('');
   
  const _goForm = useNavigate();
 
@@ -35,12 +34,6 @@ const ProductPage = () => {
     setSeletSize(name)
 
   }
-  const onColorChanges = (name) => {
-    setSeletColor(name)
-
-  }
-
-
 
 
   return (
@@ -76,27 +69,23 @@ const ProductPage = () => {
                             <ProductDetails
                                 {...product}
                                 selectedSize={product.sizes}
-                                selectedColor={product.colors}
                                 onSizeChange={onSizeChanges}
-                                onColorChange={onColorChanges}
                             />
-                            {seletColor.length >= 0 && seletSize.length >= 0 ?
+                            {seletSize.length >= 0 ?
                                 <p style={{textAlign: 'center', marginBottom: 10, color: 'red'}}>
                                     Вибери Розмір:
                                     <span style={{color: 'black'}}>{seletSize ? ' ' + seletSize + ' ' : ' ??? '}</span>
-                                    і Колір: <span style={{color: 'black'}}>{seletColor ? seletColor : ' ??? '}</span>
-                                </p> : <>dwdwdwd</>}
+                                </p> : <></>}
                             <div style={{display: 'flex', justifyContent: 'center'}}>
 
                                 <Button
-                                    btnD={seletColor.length > 0 && seletSize.length > 0 ? false : true}
+                                    btnD={seletSize.length > 0 ? false : true}
                                     variant='outline'
                                     style={{display: 'flex', background: 'red', color: 'white'}}
                                     size='sm'
                                     onClick={() => {
                                         _goForm('/form', {
                                             state: {
-                                                color: seletColor,
                                                 size: seletSize,
                                                 name: product.name,
                                                 oldPrice: product.price,

@@ -77,9 +77,9 @@ export const Button = ({
       {children}
       <div style={{ display: 'flex', justifyContent: 'space-around', padding: 5 }}>
         <span className="relative flex size-3">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-500 opacity-75"></span>
           {btnD ? 
-          <span className="relative inline-flex size-3 rounded-full bg-red-500"></span> : 
+          <span className="relative inline-flex size-3 rounded-full bg-red-500"></span> :
           <span className="relative inline-flex size-3 rounded-full bg-sky-500"></span>}
         </span>
         <code className='p-2'>Замовити</code>
@@ -88,16 +88,3 @@ export const Button = ({
   );
 };
 
-
-
-export const Label = ({ children, className, ...props }) => (
-  <label
-    className={cn(
-      "block text-sm font-medium text-gray-700",
-      className
-    )}
-    {...props}
-  >
-    {children}
-  </label>
-);

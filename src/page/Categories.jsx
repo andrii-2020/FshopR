@@ -1,9 +1,7 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useMemo } from 'react';
+import React, {useState, useEffect} from 'react';
 import '../App.css'
 import { useNavigate } from 'react-router-dom';
 import _Services from "../services";
-
 
 
 export default function Categories({showAllP}) {
@@ -12,13 +10,12 @@ export default function Categories({showAllP}) {
   const [activeService, setActiveService] = useState(null);
   const _navigate = useNavigate();
 
-  
 
+    useEffect(() => {
 
-  useMemo(() => {
-     _Services.getAllCategories().then(value => {
-      setSelectedCategory(value)
-    }).catch(e=>{ console.error('Error fetching categories:', e)})
+         _Services.getAllCategories().then(value => {
+        setSelectedCategory(value)
+        }).catch(e=>{ console.error('Error fetching categories:')})
     }, [])
 
     const handleCategoryClick = (categoryId) => {

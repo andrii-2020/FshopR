@@ -37,7 +37,6 @@ export const ProductImage = ({ imageUrl}) => {
       {imageUrl &&
         <>
           <div className="relative w-full max-w-2xl mx-auto  overflow-hidden rounded-lg" style={{height: '27rem'}}>
-      {/* Slideshow container */}
       <div className="relative h-full">
         {imageUrl.map((image, index) => (
           <div
@@ -54,8 +53,6 @@ export const ProductImage = ({ imageUrl}) => {
           </div>
         ))}
       </div>
-
-      {/* Navigation buttons */}
       <button
         onClick={prevSlide}
         className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75 transition-colors"
@@ -69,7 +66,6 @@ export const ProductImage = ({ imageUrl}) => {
         →
       </button>
 
-      {/* Dots indicator */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
         {imageUrl.map((_, index) => (
           <button
@@ -85,7 +81,6 @@ export const ProductImage = ({ imageUrl}) => {
           <div
             key={index}
             style={{display:'inline-grid',}}
-            
           >
             <img
               src={image.image}

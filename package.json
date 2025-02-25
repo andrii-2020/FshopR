@@ -44,6 +44,6 @@
     "tailwindcss": "^3.4.17",
     "web-vitals": "^4.2.4"
   },
-  "proxy": "https://shpapi-production.up.railway.app/api"
+  "proxy": "https://bugivava.pythonanywhere.com/api"
 
 }

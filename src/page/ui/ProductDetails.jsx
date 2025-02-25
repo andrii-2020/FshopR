@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { SizeSelector } from './SizeSelector';
-import { ColorSelector } from './ColorSelector';
-
 
 
 export const ProductDetails = ({
@@ -10,7 +8,6 @@ export const ProductDetails = ({
   price,
   description,
   sizes,
-  colors,
   selectedSize,
   selectedColor,
   onSizeChange,
@@ -46,11 +43,6 @@ export const ProductDetails = ({
       onSizeChange={onSizeChange}
     />
 
-    <ColorSelector
-      colors={colors}
-      selectedColor={selectedColor}
-      onColorChange={onColorChange}
-    />
 
   </div>
 );

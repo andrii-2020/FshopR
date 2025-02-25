@@ -1,13 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Categories from './page/Categories';
-
 import AllProducts from './page/AllProducts';
 import './App.css'
 import _Services from "./services";
-
-
-
 
 
 function App() {

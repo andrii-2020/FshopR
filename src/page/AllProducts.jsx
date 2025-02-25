@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import Promo from './ui/Promo';
 
 
-
-
 export default function AllProducts({ products }) {
   const navProduct = useNavigate();
   return (
