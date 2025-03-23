@@ -11,7 +11,6 @@ import _Services from "../services";
 
 const ProductPage = () => {
   const [product, setProduct] = useState([]);
-  const [seletSize, setSeletSize] = useState('');
   
  const _goForm = useNavigate();
 
@@ -30,10 +29,6 @@ const ProductPage = () => {
     }
   }, [id]);
 
-  const onSizeChanges = (name) => {
-    setSeletSize(name)
-
-  }
 
 
   return (
@@ -50,9 +45,10 @@ const ProductPage = () => {
                             zIndex: 99999,
                             padding: '18px'
                         }}>
-                            <code style={{paddingTop: 7, paddingRight: 10}}>Go Home</code>
+                            <code style={{paddingTop: 7, paddingRight: 10, color: 'blue'}}>Go Home</code>
                             <HomeIcon
                                 size={40}
+                                color={'blue'}
                                 onClick={() => {
                                     navigate('/');
                                 }}
@@ -69,24 +65,17 @@ const ProductPage = () => {
                             <ProductDetails
                                 {...product}
                                 selectedSize={product.sizes}
-                                onSizeChange={onSizeChanges}
                             />
-                            {seletSize.length >= 0 ?
-                                <p style={{textAlign: 'center', marginBottom: 10, color: 'red'}}>
-                                    Вибери Розмір:
-                                    <span style={{color: 'black'}}>{seletSize ? ' ' + seletSize + ' ' : ' ??? '}</span>
-                                </p> : <></>}
+
                             <div style={{display: 'flex', justifyContent: 'center'}}>
 
                                 <Button
-                                    btnD={seletSize.length > 0 ? false : true}
                                     variant='outline'
                                     style={{display: 'flex', background: 'red', color: 'white'}}
                                     size='sm'
                                     onClick={() => {
                                         _goForm('/form', {
                                             state: {
-                                                size: seletSize,
                                                 name: product.name,
                                                 oldPrice: product.price,
                                                 price: Number(product.newPrice) > 0 ? product.newPrice : product.price,

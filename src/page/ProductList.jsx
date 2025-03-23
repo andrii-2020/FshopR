@@ -16,7 +16,6 @@ export default function ProductList() {
 
   useEffect(() => {
     if (id) {
-
       _Services.getProductsLists(Number(id)).then(val => {
         setProductsL(val)
       }).catch(error => {

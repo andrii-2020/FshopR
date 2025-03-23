@@ -1,17 +1,11 @@
 import React from 'react';
 
-import { SizeSelector } from './SizeSelector';
 
 
 export const ProductDetails = ({
   name,
   price,
   description,
-  sizes,
-  selectedSize,
-  selectedColor,
-  onSizeChange,
-  onColorChange,
   newPrice,
   newPrice_Yes_No,
 }) => (
@@ -36,12 +30,6 @@ export const ProductDetails = ({
     <div>
       <h4 className="text-gray-600">{description}</h4>
     </div>
-
-    <SizeSelector
-      sizes={sizes}
-      selectedSize={selectedSize}
-      onSizeChange={onSizeChange}
-    />
 
 
   </div>

@@ -10,7 +10,6 @@ export default function FormsAdd() {
         l_name: '',
         phone: '',
         name_product: state.name,
-        size_product: state.size,
         price_product: state.price,
         city: '',
         number_posts: ''
@@ -81,8 +80,7 @@ export default function FormsAdd() {
 
                         <h1
                             className="text-2xl font-semibold p-4  shadow-lg bg-gray-800 text-white rounded-sm">
-                            Ви вибрали <span style={{color: 'rgba(124, 115, 120, 0.8)'}}>{state.name}</span> розмір
-                            <span style={{color: 'rgba(124, 115, 120, 0.8)'}}> {state.size} </span>
+                            Ви вибрали <span style={{color: 'rgba(124, 115, 120, 0.8)'}}>{state.name}</span>
                             <span style={{color: 'rgba(124, 115, 120, 0.8)'}}>{state.color} </span>
                             Ціна <span style={{color: 'rgba(124, 115, 120, 0.8)'}}> {state.price} </span>Грн.
                         </h1>
