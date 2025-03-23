@@ -30,7 +30,6 @@ const ProductPage = () => {
   }, [id]);
 
 
-
   return (
     <>
         {product &&
