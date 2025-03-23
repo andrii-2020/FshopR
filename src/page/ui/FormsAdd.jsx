@@ -39,7 +39,6 @@ export default function FormsAdd() {
 
     const _goHome = useNavigate()
     const SendMessage = () => {
-        console.log(bookingData)
         setShowAlert(true)
         fetch(`${config.apiUrl}/sms/`, {
             method: 'POST',
